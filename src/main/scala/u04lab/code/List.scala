@@ -64,4 +64,5 @@ object List:
     case _ => Nil()
 
   def take[A](list: List[A], n: Int): List[A] = reverse(drop(reverse(list), length(list) - n))
+
 end List
