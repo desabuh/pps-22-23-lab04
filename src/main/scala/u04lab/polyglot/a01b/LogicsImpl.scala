@@ -43,27 +43,6 @@ class LogicsImpl(private val size: Int, private val mines: Int) extends Logics:
 
 @main def mainWarehouse(): Unit =
   val x = new LogicsImpl(3, 2)
-  println(x.won)
-  println(x.hit(0,0))
-  println(x.won)
-  println(x.hit(0,1))
-  println(x.won)
-  println(x.hit(0,2))
-  println(x.won)
 
-  println(x.hit(1, 0))
-  println(x.won)
-  println(x.hit(1, 1))
-  println(x.won)
-  println(x.hit(1, 2))
-  println(x.won)
-
-  println(x.hit(2, 0))
-  println(x.won)
-  println(x.hit(2, 1))
-  println(x.won)
-  println(x.hit(2, 2))
-  println(x.won)
-  //print(x.appendRandom(List.Nil(), 14))
 
 

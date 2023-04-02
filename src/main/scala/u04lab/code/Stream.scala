@@ -23,17 +23,8 @@ object Stream:
   def map[A, B](stream: Stream[A])(f: A => B): Stream[B] = stream match
     case Cons(head, tail) => cons(f(head()), map(tail())(f))
     case _ => Empty()
-  def flatMap[A, B](stream: Stream[A])(f: A => Stream[B]): Stream[B] = stream match
-      case Cons(head, tail) => ++(f(head()), flatMap(tail())(f))
-      case _ => Empty()
 
-
-  def ++[A](stream1: Stream[A], stream2: Stream[A]): Stream[A] = stream1 match
-      case Cons(head, tail) => cons(head(),  ++(tail(), stream2))
-      case _ => stream2
-
-
-
+  
   def filter[A](stream: Stream[A])(pred: A => Boolean): Stream[A] = stream match
     case Cons(head, tail) if pred(head()) => cons(head(), filter(tail())(pred))
     case Cons(head, tail) => filter(tail())(pred)
